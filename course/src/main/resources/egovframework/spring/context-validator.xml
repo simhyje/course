@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	<!-- context-validator.xml 는 검증관련한 설정. 회원가입 할때, 아이디의 길이나, 메일주소 포함 여부등을 검증할때 사용할 수 있는 기능 -->
+    <bean id="beanValidator" class="org.springmodules.validation.commons.DefaultBeanValidator">
+        <property name="validatorFactory" ref="validatorFactory"/>
+    </bean>
+
+    <bean id="validatorFactory" class="org.springmodules.validation.commons.DefaultValidatorFactory">
+        <property name="validationConfigLocations">
+            <list>
+  <!--               <value>/WEB-INF/config/egovframework/validator/validator-rules.xml</value>
+                <value>/WEB-INF/config/egovframework/validator/validator.xml</value> -->
+            </list>
+        </property>
+    </bean>
+   
+</beans>
